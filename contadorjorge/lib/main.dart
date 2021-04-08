@@ -47,22 +47,31 @@ class _MycontadorState extends State<Mycontador> {
           centerTitle: true,
         ),
         body: Container(
-          child: Column(children: [
-            Text(
-              '$count',
+          child: Row(children: [
+            Expanded(
+              flex: 0,
+              child: Text(
+                '$count',
+              ),
             ),
-            FloatingActionButton(
-              child: Text('Add2'),
-              onPressed: counter,
-            ),
-            FloatingActionButton(
-              child: Text('Sub'),
-              onPressed: subtrair,
-            ),
-            FloatingActionButton(
-              child: Text('Zerar'),
-              onPressed: zerar,
-            )
+            Expanded(
+                flex: 1,
+                child: FloatingActionButton(
+                  child: Text('Add2'),
+                  onPressed: counter,
+                )),
+            Expanded(
+                flex: 1,
+                child: FloatingActionButton(
+                  child: Text('Sub'),
+                  onPressed: subtrair,
+                )),
+            Expanded(
+                flex: 1,
+                child: FloatingActionButton(
+                  child: Text('Zerar'),
+                  onPressed: zerar,
+                ))
           ]),
         ),
       ),

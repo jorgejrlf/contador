@@ -21,6 +21,18 @@ class _MycontadorState extends State<Mycontador> {
     });
   }
 
+  void subtrair() {
+    setState(() {
+      count--;
+    });
+  }
+
+  void zerar() {
+    setState(() {
+      count = 0;
+    });
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
@@ -34,14 +46,24 @@ class _MycontadorState extends State<Mycontador> {
           title: Text('Meu contador'),
           centerTitle: true,
         ),
-        body: Center(
-          child: Text(
-            '$count',
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Text('Add'),
-          onPressed: counter,
+        body: Container(
+          child: Column(children: [
+            Text(
+              '$count',
+            ),
+            FloatingActionButton(
+              child: Text('Add2'),
+              onPressed: counter,
+            ),
+            FloatingActionButton(
+              child: Text('Sub'),
+              onPressed: subtrair,
+            ),
+            FloatingActionButton(
+              child: Text('Zerar'),
+              onPressed: zerar,
+            )
+          ]),
         ),
       ),
     );
